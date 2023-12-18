@@ -11,6 +11,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-quiz_app-ca36b884-e4e6-4ea2-ad1f-63a84966265d")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("quiz-app")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
