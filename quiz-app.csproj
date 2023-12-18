@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>aspnet-quiz_app-31703df6-3db3-42f8-926b-0e922ed7faa1</UserSecretsId>
+    <UserSecretsId>aspnet-quiz_app-ca36b884-e4e6-4ea2-ad1f-63a84966265d</UserSecretsId>
     <RootNamespace>quiz_app</RootNamespace>
   </PropertyGroup>
 
