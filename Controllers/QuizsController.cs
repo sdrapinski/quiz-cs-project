@@ -68,6 +68,7 @@ namespace quiz_app.Controllers
             IdentityUser user =await  _userManager.FindByNameAsync(User.Identity.Name);
             quiz.UserId = user.Id;
             quiz.Author = user;
+            Console.WriteLine(quiz);
             if (ModelState.IsValid)
             {
                 _context.Add(quiz);

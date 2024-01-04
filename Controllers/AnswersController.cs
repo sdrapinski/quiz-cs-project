@@ -59,7 +59,9 @@ namespace quiz_app.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Description,IsCorrect,QuestionId")] Answer answer)
         {
-            if (ModelState.IsValid)
+            Question question = await _context.Question.FindAsync(answer.QuestionId);
+            answer.Question = question;
+            if (answer.Id !=null && answer.Description !="" && answer.Question !=null && answer.QuestionId !=null)
             {
                 _context.Add(answer);
                 await _context.SaveChangesAsync();

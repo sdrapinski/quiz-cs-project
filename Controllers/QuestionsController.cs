@@ -59,11 +59,21 @@ namespace quiz_app.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Description,QuizId")] Question question)
         {
-            if (ModelState.IsValid)
+            Quiz quiz = await _context.Quiz.FindAsync(question.QuizId);
+            question.Quiz = quiz;
+            Console.WriteLine(question);
+            if ( quiz !=null && question.Id !=null && question.Description !=null && question.QuizId !=null)
             {
                 _context.Add(question);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
+            }
+            foreach (var modelState in ModelState.Values)
+            {
+                foreach (var error in modelState.Errors)
+                {
+                    Console.WriteLine($"Error: {error.ErrorMessage}");
+                }
             }
             ViewData["QuizId"] = new SelectList(_context.Set<Quiz>(), "Id", "Id", question.QuizId);
             return View(question);
