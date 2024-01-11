@@ -8,125 +8,133 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = quiz_app
 build_property.RootNamespace = quiz_app
-build_property.ProjectDir = c:\Users\Szymon\Desktop\quiz-cs-project\
+build_property.ProjectDir = C:\Users\Szymon\Desktop\quiz-cs-project\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\Users\Szymon\Desktop\quiz-cs-project
+build_property.MSBuildProjectDirectory = C:\Users\Szymon\Desktop\quiz-cs-project
 build_property._RazorSourceGeneratorDebug = 
 
-[c:/Users/Szymon/Desktop/quiz-cs-project/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/Szymon/Desktop/quiz-cs-project/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Szymon/Desktop/quiz-cs-project/Views/Answers/Create.cshtml]
+[C:/Users/Szymon/Desktop/quiz-cs-project/Views/Answers/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5zd2Vyc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Szymon/Desktop/quiz-cs-project/Views/Answers/Delete.cshtml]
+[C:/Users/Szymon/Desktop/quiz-cs-project/Views/Answers/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5zd2Vyc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Szymon/Desktop/quiz-cs-project/Views/Answers/Details.cshtml]
+[C:/Users/Szymon/Desktop/quiz-cs-project/Views/Answers/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5zd2Vyc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Szymon/Desktop/quiz-cs-project/Views/Answers/Edit.cshtml]
+[C:/Users/Szymon/Desktop/quiz-cs-project/Views/Answers/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5zd2Vyc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Szymon/Desktop/quiz-cs-project/Views/Answers/Index.cshtml]
+[C:/Users/Szymon/Desktop/quiz-cs-project/Views/Answers/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5zd2Vyc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Szymon/Desktop/quiz-cs-project/Views/Home/Index.cshtml]
+[C:/Users/Szymon/Desktop/quiz-cs-project/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Szymon/Desktop/quiz-cs-project/Views/Home/Privacy.cshtml]
+[C:/Users/Szymon/Desktop/quiz-cs-project/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Szymon/Desktop/quiz-cs-project/Views/Questions/Create.cshtml]
+[C:/Users/Szymon/Desktop/quiz-cs-project/Views/Questions/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Szymon/Desktop/quiz-cs-project/Views/Questions/Delete.cshtml]
+[C:/Users/Szymon/Desktop/quiz-cs-project/Views/Questions/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25zXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Szymon/Desktop/quiz-cs-project/Views/Questions/Details.cshtml]
+[C:/Users/Szymon/Desktop/quiz-cs-project/Views/Questions/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25zXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Szymon/Desktop/quiz-cs-project/Views/Questions/Edit.cshtml]
+[C:/Users/Szymon/Desktop/quiz-cs-project/Views/Questions/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Szymon/Desktop/quiz-cs-project/Views/Questions/Index.cshtml]
+[C:/Users/Szymon/Desktop/quiz-cs-project/Views/Questions/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Szymon/Desktop/quiz-cs-project/Views/Quizs/Create.cshtml]
+[C:/Users/Szymon/Desktop/quiz-cs-project/Views/Quizs/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpenNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Szymon/Desktop/quiz-cs-project/Views/Quizs/Delete.cshtml]
+[C:/Users/Szymon/Desktop/quiz-cs-project/Views/Quizs/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpenNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Szymon/Desktop/quiz-cs-project/Views/Quizs/Details.cshtml]
+[C:/Users/Szymon/Desktop/quiz-cs-project/Views/Quizs/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpenNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Szymon/Desktop/quiz-cs-project/Views/Quizs/Edit.cshtml]
+[C:/Users/Szymon/Desktop/quiz-cs-project/Views/Quizs/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpenNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Szymon/Desktop/quiz-cs-project/Views/Quizs/Index.cshtml]
+[C:/Users/Szymon/Desktop/quiz-cs-project/Views/Quizs/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpenNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Szymon/Desktop/quiz-cs-project/Views/Shared/Error.cshtml]
+[C:/Users/Szymon/Desktop/quiz-cs-project/Views/Quizs/MyQuizzes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpenNcTXlRdWl6emVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Szymon/Desktop/quiz-cs-project/Views/Quizs/Solve.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpenNcU29sdmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Szymon/Desktop/quiz-cs-project/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Szymon/Desktop/quiz-cs-project/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/Szymon/Desktop/quiz-cs-project/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Szymon/Desktop/quiz-cs-project/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Szymon/Desktop/quiz-cs-project/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Szymon/Desktop/quiz-cs-project/Views/UserQuizs/Create.cshtml]
+[C:/Users/Szymon/Desktop/quiz-cs-project/Views/UserQuizs/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclF1aXpzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Szymon/Desktop/quiz-cs-project/Views/UserQuizs/Delete.cshtml]
+[C:/Users/Szymon/Desktop/quiz-cs-project/Views/UserQuizs/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclF1aXpzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Szymon/Desktop/quiz-cs-project/Views/UserQuizs/Details.cshtml]
+[C:/Users/Szymon/Desktop/quiz-cs-project/Views/UserQuizs/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclF1aXpzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Szymon/Desktop/quiz-cs-project/Views/UserQuizs/Edit.cshtml]
+[C:/Users/Szymon/Desktop/quiz-cs-project/Views/UserQuizs/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclF1aXpzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Szymon/Desktop/quiz-cs-project/Views/UserQuizs/Index.cshtml]
+[C:/Users/Szymon/Desktop/quiz-cs-project/Views/UserQuizs/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclF1aXpzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Szymon/Desktop/quiz-cs-project/Views/_ViewImports.cshtml]
+[C:/Users/Szymon/Desktop/quiz-cs-project/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Szymon/Desktop/quiz-cs-project/Views/_ViewStart.cshtml]
+[C:/Users/Szymon/Desktop/quiz-cs-project/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Szymon/Desktop/quiz-cs-project/Views/Shared/_Layout.cshtml]
+[C:/Users/Szymon/Desktop/quiz-cs-project/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-6bo5jlulm9

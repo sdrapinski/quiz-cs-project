@@ -1,16 +1,49 @@
-﻿@{
+﻿@model List<Quiz>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
+<style>
+    .quiz-tiles-container {
+        display: flex; /* lub 'grid' w zależności od preferencji */
+        flex-wrap: wrap;
+        gap: 20px; /* odstęp między kafelkami */
+        margin-top:30px;
+    }
+
+    .quiz-tile {
+        border: 1px solid #ccc; /* obramowanie kafelka */
+        padding: 20px;
+        width: 300px; /* szerokość kafelka */
+        box-sizing: border-box;
+    }
+
+    .quiz-tile a {
+        display: block;
+        margin-top: 10px;
+    }
+</style>
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-     <div>
-        <h2>Quick Links:</h2>
-        <ul>
-         <a href="./Quizs">Quizy</a> <br/>
-         <a href="./Questions">Pytania</a> <br/>
-         <a href="./Answers">Odpowiedzi</a>
-        </ul>
-    </div>
+    <h2>Lista Quizów</h2>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="quiz-tiles-container">
+            @foreach (var quiz in Model)
+            {
+                <div class="quiz-tile">
+                    <h3>@quiz.Title</h3>
+                    <p>@quiz.Description</p>
+                    <a asp-controller="Quizs" asp-action="Solve" asp-route-id="@quiz.Id">Rozwiąż quiz</a>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p>Brak dostępnych quizów.</p>
+    }
 </div>
+

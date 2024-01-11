@@ -32,6 +32,90 @@ namespace quiz_app.Controllers
                           Problem("Entity set 'ApplicationDbContext.Quiz'  is null.");
         }
 
+        public IActionResult MyQuizzes()
+        {
+            // Pobierz quizy stworzone przez zalogowanego użytkownika
+            var user = _userManager.FindByNameAsync(User.Identity.Name).Result;
+            var quizzes = _context.Quiz.Where(q => q.UserId == user.Id).ToList();
+
+            var quizCompletionCounts = new Dictionary<int, int>();
+
+            foreach (var quiz in quizzes)
+            {
+                var completionCount = _context.UserQuiz.Count(uq => uq.QuizId == quiz.Id);
+                quizCompletionCounts.Add(quiz.Id, completionCount);
+            }
+
+            ViewBag.QuizCompletionCounts = quizCompletionCounts;
+
+            return View(quizzes);
+        }
+
+
+        // Solve
+        public IActionResult Solve(int id)
+        {
+            var quiz = _context.Quiz.Include(q => q.Questions).ThenInclude(q => q.Answers).FirstOrDefault(q => q.Id == id);
+
+            if (quiz == null)
+            {
+                return NotFound();
+            }
+
+            return View(quiz);
+        }
+
+        [HttpPost]
+        public IActionResult SubmitAnswers(int quizId, Dictionary<int, int> selectedAnswerIds)
+        {
+            var quiz = _context.Quiz.Include(q => q.Questions).ThenInclude(q => q.Answers).FirstOrDefault(q => q.Id == quizId);
+
+            if (quiz == null)
+            {
+                return NotFound();
+            }
+
+            var user = _userManager.FindByNameAsync(User.Identity.Name).Result;
+
+            int score = CalculateScore(quiz, selectedAnswerIds.Values.ToList());
+
+            var userQuiz = new UserQuiz
+            {
+                UserId = user.Id,
+                QuizId = quizId,
+                DateCompleted = DateTime.Now,
+                Score = score
+            };
+
+            _context.UserQuiz.Add(userQuiz);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "UserQuizs"); // Przykładowe przekierowanie
+        }
+
+
+        private int CalculateScore(Quiz quiz, List<int> selectedAnswerIds)
+        {
+            int score = 0;
+
+            foreach (var question in quiz.Questions)
+            {
+                foreach (var selectedAnswerId in selectedAnswerIds)
+                {
+                    var answer = question.Answers.FirstOrDefault(a => a.Id == selectedAnswerId);
+
+                    if (answer != null && answer.IsCorrect)
+                    {
+                        // Jeśli odpowiedź jest poprawna, dodaj punkty
+                        score++;
+                    }
+                }
+            }
+
+            return score;
+        }
+
+
         // GET: Quizs/Details/5
         public async Task<IActionResult> Details(int? id)
         {

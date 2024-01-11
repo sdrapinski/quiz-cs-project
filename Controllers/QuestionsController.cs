@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -13,17 +14,23 @@ namespace quiz_app.Controllers
     public class QuestionsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public QuestionsController(ApplicationDbContext context)
+        public QuestionsController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Questions
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Question.Include(q => q.Quiz);
-            return View(await applicationDbContext.ToListAsync());
+
+            var userId = _userManager.GetUserId(User);
+            var questions = _context.Question.Where(q => q.Quiz.UserId == userId).Include(q => q.Quiz).ToList();
+            return View(questions);
+            //var applicationDbContext = _context.Question.Include(q => q.Quiz);
+            //return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: Questions/Details/5

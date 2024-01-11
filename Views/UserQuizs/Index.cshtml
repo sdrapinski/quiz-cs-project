@@ -21,6 +21,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.DateCompleted)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Score)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -28,13 +31,16 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.User.Id)
+                @Html.DisplayFor(modelItem => item.User.Email)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Quiz.Id)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DateCompleted)
+            </td> 
+            <td>
+                @Html.DisplayFor(modelItem => item.Score)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
