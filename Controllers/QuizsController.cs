@@ -22,7 +22,7 @@ namespace quiz_app.Controllers
             _context = context;
             _userManager = userManager;
         }
-
+        [Authorize]
         // GET: Quizs
         public async Task<IActionResult> Index()
         {
@@ -31,7 +31,7 @@ namespace quiz_app.Controllers
                           View(await _context.Quiz.Where(m => m.Author == user).Include(m => m.Author).ToListAsync()) :
                           Problem("Entity set 'ApplicationDbContext.Quiz'  is null.");
         }
-
+        [Authorize]
         public IActionResult MyQuizzes()
         {
             // Pobierz quizy stworzone przez zalogowanego użytkownika
@@ -53,6 +53,7 @@ namespace quiz_app.Controllers
 
 
         // Solve
+        [Authorize]
         public IActionResult Solve(int id)
         {
             var quiz = _context.Quiz.Include(q => q.Questions).ThenInclude(q => q.Answers).FirstOrDefault(q => q.Id == id);
@@ -66,6 +67,7 @@ namespace quiz_app.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public IActionResult SubmitAnswers(int quizId, Dictionary<int, int> selectedAnswerIds)
         {
             var quiz = _context.Quiz.Include(q => q.Questions).ThenInclude(q => q.Answers).FirstOrDefault(q => q.Id == quizId);
@@ -117,6 +119,7 @@ namespace quiz_app.Controllers
 
 
         // GET: Quizs/Details/5
+        [Authorize]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Quiz == null)
@@ -135,6 +138,7 @@ namespace quiz_app.Controllers
         }
 
         // GET: Quizs/Create
+        [Authorize]
         public IActionResult Create()
         {
            
@@ -147,6 +151,7 @@ namespace quiz_app.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Create([Bind("Id,Title,Description")] Quiz quiz)
         {
             IdentityUser user =await  _userManager.FindByNameAsync(User.Identity.Name);
@@ -170,6 +175,7 @@ namespace quiz_app.Controllers
         }
 
         // GET: Quizs/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Quiz == null)
@@ -190,6 +196,7 @@ namespace quiz_app.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,UserId")] Quiz quiz)
         {
             if (id != quiz.Id)
@@ -221,6 +228,7 @@ namespace quiz_app.Controllers
         }
 
         // GET: Quizs/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Quiz == null)
@@ -240,6 +248,7 @@ namespace quiz_app.Controllers
 
         // POST: Quizs/Delete/5
         [HttpPost, ActionName("Delete")]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {

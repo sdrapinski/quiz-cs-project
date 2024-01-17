@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -13,16 +15,20 @@ namespace quiz_app.Controllers
     public class UserQuizsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public UserQuizsController(ApplicationDbContext context)
+        public UserQuizsController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: UserQuizs
+        [Authorize]
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.UserQuiz.Include(u => u.Quiz).Include(u => u.User);
+            IdentityUser user = _userManager.FindByNameAsync(User.Identity.Name).Result;
+            var applicationDbContext = _context.UserQuiz.Where(u=>u.User == user).Include(u => u.Quiz).Include(u => u.User);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -47,6 +53,7 @@ namespace quiz_app.Controllers
         }
 
         // GET: UserQuizs/Create
+        [Authorize]
         public IActionResult Create()
         {
             ViewData["QuizId"] = new SelectList(_context.Quiz, "Id", "Id");

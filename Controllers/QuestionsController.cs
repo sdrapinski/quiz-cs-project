@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -23,6 +24,7 @@ namespace quiz_app.Controllers
         }
 
         // GET: Questions
+        [Authorize]
         public async Task<IActionResult> Index()
         {
 
@@ -34,6 +36,7 @@ namespace quiz_app.Controllers
         }
 
         // GET: Questions/Details/5
+        [Authorize]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Question == null)
@@ -53,6 +56,7 @@ namespace quiz_app.Controllers
         }
 
         // GET: Questions/Create
+        [Authorize]
         public IActionResult Create()
         {
             ViewData["QuizId"] = new SelectList(_context.Set<Quiz>(), "Id", "Id");
@@ -87,6 +91,7 @@ namespace quiz_app.Controllers
         }
 
         // GET: Questions/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Question == null)
@@ -108,6 +113,7 @@ namespace quiz_app.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Description,QuizId")] Question question)
         {
             if (id != question.Id)
@@ -140,6 +146,7 @@ namespace quiz_app.Controllers
         }
 
         // GET: Questions/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Question == null)
@@ -161,6 +168,7 @@ namespace quiz_app.Controllers
         // POST: Questions/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Question == null)

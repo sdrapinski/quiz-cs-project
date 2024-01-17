@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -23,6 +24,7 @@ namespace quiz_app.Controllers
         }
 
         // GET: Answers
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             var userId = _userManager.GetUserId(User);
@@ -33,6 +35,7 @@ namespace quiz_app.Controllers
         }
 
         // GET: Answers/Details/5
+        [Authorize]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Answer == null)
@@ -52,6 +55,7 @@ namespace quiz_app.Controllers
         }
 
         // GET: Answers/Create
+        [Authorize]
         public IActionResult Create()
         {
             ViewData["QuestionId"] = new SelectList(_context.Set<Question>(), "Id", "Id");
@@ -63,6 +67,7 @@ namespace quiz_app.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Create([Bind("Id,Description,IsCorrect,QuestionId")] Answer answer)
         {
             Question question = await _context.Question.FindAsync(answer.QuestionId);
@@ -78,6 +83,7 @@ namespace quiz_app.Controllers
         }
 
         // GET: Answers/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Answer == null)
@@ -99,6 +105,7 @@ namespace quiz_app.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Description,IsCorrect,QuestionId")] Answer answer)
         {
             if (id != answer.Id)
@@ -131,6 +138,7 @@ namespace quiz_app.Controllers
         }
 
         // GET: Answers/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Answer == null)
@@ -152,6 +160,7 @@ namespace quiz_app.Controllers
         // POST: Answers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Answer == null)
