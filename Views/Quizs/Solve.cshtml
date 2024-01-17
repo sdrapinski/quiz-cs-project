@@ -4,20 +4,72 @@
     ViewData["Title"] = "Rozwiązywanie quizu: " + Model.Title;
 }
 
-<h2>@ViewData["Title"]</h2>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f9fa;
+        color: #343a40;
+    }
 
-<form method="post" action="@Url.Action("SubmitAnswers", "Quizs")">
+    .quiz-title {
+        color: #007bff;
+    }
+
+    .quiz-form {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #ffffff;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .question-container {
+        margin-bottom: 20px;
+    }
+
+    .question-title {
+        color: #007bff;
+        margin-bottom: 10px;
+    }
+
+    .answer-label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .answer-radio {
+        margin-right: 5px;
+    }
+
+    .submit-button {
+        background-color: #007bff;
+        color: #ffffff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .submit-button:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<h2 class="quiz-title">@ViewData["Title"]</h2>
+
+<form method="post" action="@Url.Action("SubmitAnswers", "Quizs")" class="quiz-form">
     <input type="hidden" name="quizId" value="@Model.Id" />
 
     @foreach (var question in Model.Questions)
     {
-        <div>
-            <h4>@question.Description</h4>
+        <div class="question-container">
+            <h4 class="question-title">@question.Description</h4>
 
             @foreach (var answer in question.Answers)
             {
-                <label>
-                    <input type="radio" name="selectedAnswerIds[@question.Id]" value="@answer.Id" />
+                <label class="answer-label">
+                    <input type="radio" name="selectedAnswerIds[@question.Id]" value="@answer.Id" class="answer-radio" />
                     @answer.Description
                 </label>
                 <br />
@@ -25,5 +77,5 @@
         </div>
     }
 
-    <button type="submit">Zapisz odpowiedzi</button>
+    <button type="submit" class="submit-button">Zapisz odpowiedzi</button>
 </form>

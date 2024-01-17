@@ -59,7 +59,9 @@ namespace quiz_app.Controllers
         [Authorize]
         public IActionResult Create()
         {
-            ViewData["QuizId"] = new SelectList(_context.Set<Quiz>(), "Id", "Id");
+            var userId = _userManager.GetUserId(User);
+            var selectListItems = _context.Quiz.Where(q=>q.UserId == userId).ToList();
+            ViewData["QuizId"] = new SelectList(selectListItems, "Id", "Title");
             return View();
         }
 
