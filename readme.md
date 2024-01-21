@@ -38,10 +38,10 @@ Aby rozwiązać quiz należy wejść na stronę główną, zakłądka Home i wyb
 
 Po rozwiązaniu quizu użytkownik jest przekierowywany na strone z podsumowaniem
 
-### Zakładki Użytkownika
+## Zakładki Użytkownika
 
-## Zakładka Ukonczone Quizy
+### Zakładka Ukonczone Quizy
 Pokazuje quizy ukończone przez użytkownika
 
-## Zakładka Moje Quizy
+### Zakładka Moje Quizy
 Pokazuje quizy stworzone przez użytkownika
