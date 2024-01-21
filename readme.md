@@ -31,8 +31,12 @@ w polu formularza o nazwie description, oraz wybrać tytuł quizu do którego ma
 Tworzenie odpowiedzi wygląda podobnie do tworzenia pytań, należy wejść w odpowiednią zakładkę, kliknąć przycisk. Następnie w polu
 description wpisać zawartość odpowiedzi i wybrać tytuł pytania do której ma być przypisana
 
+Można checkboxem wybrać poprawną odpowiedź
+
 ## Rozwiązywanie quizu
 Aby rozwiązać quiz należy wejść na stronę główną, zakłądka Home i wybrać quiz
+
+Po rozwiązaniu quizu użytkownik jest przekierowywany na strone z podsumowaniem
 
 ### Zakładki Użytkownika
 
