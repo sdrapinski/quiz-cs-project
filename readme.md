@@ -3,6 +3,7 @@
 Na początku w celu zainicjowania projektu należy zrobić
 
 add-migration init
+
 update-database
 
 ## Logowanie
