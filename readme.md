@@ -44,4 +44,4 @@ Po zakończeniu quizu użytkownik jest przekierowywany na strone z ukończonymi 
 Pokazuje quizy ukończone przez użytkownika
 
 ### Zakładka Moje Quizy
-Pokazuje quizy stworzone przez użytkownika
+Pokazuje quizy stworzone przez użytkownika oraz ilość podejść użytkowników do testu
