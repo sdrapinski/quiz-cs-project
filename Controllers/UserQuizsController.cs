@@ -43,6 +43,7 @@ namespace quiz_app.Controllers
             var userQuiz = await _context.UserQuiz
                 .Include(u => u.Quiz)
                 .Include(u => u.User)
+               
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (userQuiz == null)
             {

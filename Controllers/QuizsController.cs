@@ -127,12 +127,13 @@ namespace quiz_app.Controllers
                 return NotFound();
             }
 
-            var quiz = await _context.Quiz
+            var quiz = await _context.Quiz.Include(q=>q.Author)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (quiz == null)
             {
                 return NotFound();
             }
+           
 
             return View(quiz);
         }
@@ -236,7 +237,7 @@ namespace quiz_app.Controllers
                 return NotFound();
             }
 
-            var quiz = await _context.Quiz
+            var quiz = await _context.Quiz.Include(q => q.Author)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (quiz == null)
             {

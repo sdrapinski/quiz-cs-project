@@ -98,7 +98,11 @@ namespace quiz_app.Controllers
             {
                 return NotFound();
             }
-            ViewData["QuestionId"] = new SelectList(_context.Set<Question>(), "Id", "Id", answer.QuestionId);
+
+            var userId = _userManager.GetUserId(User);
+            var selectListItems = _context.Question.Where(q => q.Quiz.UserId == userId).ToList();
+
+            ViewData["QuestionId"] = new SelectList(selectListItems, "Id", "Description", answer.QuestionId);
             return View(answer);
         }
 
@@ -110,12 +114,14 @@ namespace quiz_app.Controllers
         [Authorize]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Description,IsCorrect,QuestionId")] Answer answer)
         {
+            Question question = await _context.Question.FindAsync(answer.QuestionId);
+            answer.Question = question;
             if (id != answer.Id)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (answer.Id != null && answer.Description != "" && answer.Question != null && answer.QuestionId != null)
             {
                 try
                 {
