@@ -2,6 +2,8 @@
 
 Na początku w celu zainicjowania projektu należy zrobić
 
+add-migration nazwa
+
 update-database
 
 ## Logowanie
